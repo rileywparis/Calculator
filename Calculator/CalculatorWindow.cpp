@@ -4,10 +4,11 @@ CalculatorWindow::CalculatorWindow() : wxFrame(nullptr, wxID_ANY, "Calculator", 
 {
 	int xSize = this->GetSize().x;
 	int ySize = this->GetSize().y;
+
 	btn0 = new wxButton(this, wxID_ANY, "0", wxPoint(margin, ySize - size.y - margin - 40), size);
-	btnTemp = new wxButton(this, wxID_ANY, "0", wxPoint(margin + size.x + spacing, ySize - size.y - margin - 40), size);
-	btnPrd = new wxButton(this, wxID_ANY, ".", wxPoint(margin + size.x * 2 + spacing * 2, ySize - size.y - margin - 40), size);
-	btnEnter = new wxButton(this, wxID_ANY, "=", wxPoint(margin + size.x * 3 + spacing * 3, ySize - size.y - margin - 40), size);
+	btnPrd = new wxButton(this, wxID_ANY, ".", wxPoint(margin + size.x + spacing, ySize - size.y - margin - 40), size);
+	btnEnter = new wxButton(this, wxID_ANY, "=", wxPoint(margin + size.x * 2 + spacing * 2, ySize - size.y - margin - 40), wxSize(size.x * 2 + spacing, size.y));
+	//btnEnter = new wxButton(this, wxID_ANY, "=", wxPoint(margin + size.x * 3 + spacing * 3, ySize - size.y - margin - 40), wxSize(size.x * 2, size.y));
 
 	btn1 = new wxButton(this, wxID_ANY, "1", wxPoint(margin, ySize - size.y * 2 - spacing - margin - 40), size);
 	btn2 = new wxButton(this, wxID_ANY, "2", wxPoint(margin + size.x + spacing, ySize - size.y * 2 - spacing - margin - 40), size);
