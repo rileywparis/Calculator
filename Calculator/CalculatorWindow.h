@@ -33,4 +33,6 @@ private:
 	wxStaticText* txtDisplay;
 public:
 	CalculatorWindow();
+	wxDECLARE_EVENT_TABLE();
+	void OnButtonClick(wxCommandEvent& evt);
 };
