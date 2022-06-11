@@ -30,7 +30,8 @@ private:
 	wxButton* btnDec;
 	wxButton* btnBin;
 	wxButton* btnHex;
-	wxStaticText* txtDisplay;
+	wxTextCtrl* txtDisplay;
+	//wxStaticText* txtDisplay;
 public:
 	CalculatorWindow();
 	wxDECLARE_EVENT_TABLE();
