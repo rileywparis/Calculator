@@ -2,12 +2,19 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "IBaseCommand.h"
+#include "AddCommand.h"
+#include "SubtractCommand.h"
+#include "MultiplicationCommand.h"
+#include "DivisionCommand.h"
+#include "ModulusCommand.h"
 
 class CalculatorProcessor
 {
 private:
 	static CalculatorProcessor* _processor;
 	int baseNumber = 0;
+	std::vector<IBaseCommand*> queue;
 	CalculatorProcessor() {}
 public:
 	static CalculatorProcessor* GetInstance()
@@ -84,42 +91,19 @@ public:
 				}
 	exit:;
 		if (symbol == '+')
-			return Addition(left, right);
+			queue.push_back(new AddCommand(left, right));
 		else if (symbol == '-')
-			return Subtraction(left, right);
+			queue.push_back(new SubtractCommand(left, right));
 		else if (symbol == 'X')
-			return Multiplication(left, right);
+			queue.push_back(new MultiplicationCommand(left, right));
 		else if (symbol == '÷')
-			return Division(left, right);
+			queue.push_back(new DivisionCommand(left, right));
 		else if (symbol == '%')
-			return Modulus(left, right);
-		return 0;
-
-	}
-
-	float Addition(float left, float right)
-	{
-		return left + right;
-	}
-
-	float Subtraction(float left, float right)
-	{
-		return left - right;
-	}
-
-	float Multiplication(float left, float right)
-	{
-		return left * right;
-	}
-
-	float Division(float left, float right)
-	{
-		return left / right;
-	}
-
-	float Modulus(float left, float right)
-	{
-		return (int)left % (int)right;
+			queue.push_back(new ModulusCommand(left, right));
+		float result = 0;
+		result = queue.at(0)->Execute();
+		queue.erase(queue.begin());
+		return result;
 	}
 };
 
