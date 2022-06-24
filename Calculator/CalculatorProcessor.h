@@ -107,5 +107,5 @@ public:
 	}
 };
 
-CalculatorProcessor* CalculatorProcessor::_processor = nullptr;
+//CalculatorProcessor* CalculatorProcessor::_processor = nullptr;
 

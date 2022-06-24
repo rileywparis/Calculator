@@ -137,28 +137,28 @@ wxButton* ButtonFactory::CreateClearButton()
 
 wxButton* ButtonFactory::CreateEnterButton()
 {
-	wxButton* btn = new wxButton(mWindow, wxID_ANY, "=", wxPoint(mMargin + mSize.x * 2 + mSpacing * 2, mHeight - mSize.y - mMargin - 40), wxSize(mSize.x * 2 + mSpacing, mSize.y));
+	wxButton* btn = new wxButton(mWindow, 100, "=", wxPoint(mMargin + mSize.x * 2 + mSpacing * 2, mHeight - mSize.y - mMargin - 40), wxSize(mSize.x * 2 + mSpacing, mSize.y));
 	btn->SetFont(font);
 	return btn;
 }
 
 wxButton* ButtonFactory::CreateDecimalButton()
 {
-	wxButton* btn = new wxButton(mWindow, wxID_ANY, "DEC", wxPoint(mMargin, 150), mSize);
+	wxButton* btn = new wxButton(mWindow, 200, "DEC", wxPoint(mMargin, 150), mSize);
 	btn->SetFont(font);
 	return btn;
 }
 
 wxButton* ButtonFactory::CreateBinaryButton()
 {
-	wxButton* btn = new wxButton(mWindow, wxID_ANY, "BIN", wxPoint(mMargin + mSize.x + mSpacing * 1.5, 150), mSize);
+	wxButton* btn = new wxButton(mWindow, 201, "BIN", wxPoint(mMargin + mSize.x + mSpacing * 1.5, 150), mSize);
 	btn->SetFont(font);
 	return btn;
 }
 
 wxButton* ButtonFactory::CreateHexadecimalButton()
 {
-	wxButton* btn = new wxButton(mWindow, wxID_ANY, "HEX", wxPoint(mMargin + mSize.x * 2 + mSpacing * 3, 150), mSize);
+	wxButton* btn = new wxButton(mWindow, 202, "HEX", wxPoint(mMargin + mSize.x * 2 + mSpacing * 3, 150), mSize);
 	btn->SetFont(font);
 	return btn;
 }
